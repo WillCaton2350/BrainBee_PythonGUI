@@ -14,9 +14,6 @@ import time
 from tkinter import Tk
 import random as rd 
 
-
-
-
 root  = tk.Tk()
 root.geometry("350x450")
 root.title("Brain Bee")
@@ -39,17 +36,17 @@ def indi(lb,page):
     page()
     
 optionsFrame = tk.Frame(root, background="#fff")
-moovBtn = tk.Button(root, text="Daily",font=('Bold',15),foreground="#141414",bd=0,background="lightblue",command= lambda: indi(moovIndi,DayPage))
+moovBtn = tk.Button(root, text="Daily",font=('Bold',15),foreground="#141414",bd=0,background="lightblue",command= lambda: indi(moovIndi,DailyPage))
 moovBtn.place(x=10, y=50)
 moovIndi = tk.Label(optionsFrame,text='',background="#eef2f3")
 moovIndi.place(x=3,y=50,width=5,height=30)
 
-audBtn = tk.Button(root, text="Quote",font=('Bold',15),foreground="#141414",bd=0,background="lightblue",command= lambda: indi(audIndi,QLDPage))
+audBtn = tk.Button(root, text="Quote",font=('Bold',15),foreground="#141414",bd=0,background="lightblue",command= lambda: indi(audIndi,QuotePage))
 audBtn.place(x=10, y=100)
 audIndi = tk.Label(optionsFrame,text='',background="#eef2f3")
 audIndi.place(x=3,y=100,width=5,height=30)
 
-podBtn = tk.Button(root, text="Scale",font=('Bold',15),foreground="#141414",bd=0,background="lightblue",command= lambda: indi(podIndi,BeePage))
+podBtn = tk.Button(root, text="Scale",font=('Bold',15),foreground="#141414",bd=0,background="lightblue",command= lambda: indi(podIndi,ScalePage))
 podBtn.place(x=10, y=150)
 podIndi = tk.Label(optionsFrame,text='',background="#eef2f3")
 podIndi.place(x=3,y=150,width=5,height=30)
@@ -102,7 +99,7 @@ def homepage():
     contactBtn.pack(padx=50,pady=50)
     contactBtn.place(x=37,y=320)
 
-def DayPage():
+def DailyPage():
     moovFrame = tk.Frame(mainFrame)
     lb = tk.Label(moovFrame)
     lb.pack()
@@ -166,7 +163,7 @@ def DayPage():
         Clear_btn.place(x=130,y=200)
         
        
-def QLDPage(): 
+def QuotePage(): 
     audFrame = tk.Frame(mainFrame)
     lb = tk.Label(audFrame)
     lb.pack()
@@ -205,17 +202,17 @@ def QLDPage():
     button.grid(row=1,column=0,stick="WE",padx=55,pady=150)
     
        
-def BeePage():#BEE
+def ScalePage():
     podFrame = tk.Frame(mainFrame)
     lb = tk.Label(podFrame)
     lb.pack()
     podFrame.pack(pady=20)
     mainLogoLabel = tk.Label(mainFrame,text="☁",fg="lightblue",background="#eef2f3",font=('Arial regular',150))
-    mainLogoLabel.pack(padx=50,pady=50)
-    mainLogoLabel.place(x=40,y=-50)
+    mainLogoLabel.pack(padx=50,pady=30)
+    mainLogoLabel.place(x=40,y=30)
     moovFrame = tkinter.LabelFrame(mainFrame)
     moovLabel = tkinter.Label(mainFrame,background="lightblue",foreground="#fff",text="Brain Bee",font=('Arial bold',20))
-    moovFrame.pack(padx=30, pady=0)
+    moovFrame.pack(padx=30, pady=30)
     moovLabel.place(x=63, y=35)
     
     def countdown():
@@ -299,7 +296,5 @@ def BeePage():#BEE
             
 screen_width = root.winfo_screenwidth()
 screen_height = root.winfo_screenheight()
-
- 
 
 root.mainloop()
